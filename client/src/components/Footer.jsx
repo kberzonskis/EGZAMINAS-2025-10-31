@@ -19,14 +19,14 @@ return (
     {isLoggedIn ? (
                     <>  <Link to="/logout" className="btn btn-light fw-bold me-2">Logout</Link>
                         <Link to="/admin" className="btn btn-success me-2">Admin Home Page</Link>
-                    <Link to="/products" className="btn btn-warning me-2">Products</Link>
+                    <Link to="/products" className="btn btn-warning me-2">Helpdesk questions</Link>
                     </>
                 ) : (
                     <> 
                        
                         <Link to="/register" className="btn btn-danger me-2">Register</Link>
                         <Link to="/login" className="btn btn-dark me-2">Login</Link>
-                         <Link to="/products" className="btn btn-warning me-2">Products</Link>
+                         <Link to="/products" className="btn btn-warning me-2">Helpdesk questions</Link>
                     </>
                 )}
 

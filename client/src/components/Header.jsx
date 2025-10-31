@@ -3,9 +3,7 @@ import { useContext } from "react";
 import { UserContext } from "../context/user/UserContext";
 
 export function Header() {
-/*const backgroundStyle = {
-backgroundImage: `url(${Bluu})`,
-}; */
+
 
 const { isLoggedIn } = useContext(UserContext);
 return (
@@ -22,7 +20,7 @@ return (
                         <Link to="/" className="btn btn-light me-2">Home</Link>
                     </li>
                     <li>
-                        <NavLink to='/stories' className="btn btn-warning me-2">Stories</NavLink>
+                        <NavLink to='/stories' className="btn btn-warning me-2">Helpdesk</NavLink>
                     </li>
                 </ul>
                

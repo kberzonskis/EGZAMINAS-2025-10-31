@@ -24,17 +24,17 @@ export function Sidebar() {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link d-flex align-items-center gap-2 " to="/admin/helpdesk">
-                                All Stories
+                                All Helpdesk questions
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link d-flex align-items-center gap-2 " to="/admin/helpdesk/published">
-                                Published stories
+                                Published Helpdesk 
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link d-flex align-items-center gap-2 " to="/admin/helpdesk/draft">
-                                Draft stories
+                                Draft Helpdesk 
                             </Link>
                         </li>
                     </ul>
