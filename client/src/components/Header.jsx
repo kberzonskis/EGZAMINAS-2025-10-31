@@ -17,7 +17,7 @@ return (
                 </div>
                 <ul className=" nav-pills  nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li>
-                        <Link to="/" className="btn btn-light me-2">Home</Link>
+                        <Link to="/" className="btn btn-danger me-2">Home</Link>
                     </li>
                     <li>
                         <NavLink to='/stories' className="btn btn-warning me-2">Helpdesk</NavLink>

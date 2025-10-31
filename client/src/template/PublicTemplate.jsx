@@ -12,7 +12,7 @@ return(
  backgroundPosition: 'center',
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
-  color: 'white'
+  color: 'Black'
   
  }}>
 <div className="container">
