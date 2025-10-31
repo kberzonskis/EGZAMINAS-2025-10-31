@@ -3,33 +3,58 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+import {PublicTemplate} from '../src/template/PublicTemplate'
+import {AdminTemplate} from './template/AdminTemplates'
+
+import { HomePage } from './pages/public/Home';
+import { Page404 } from './pages/public/page404';
+
+import { RegisterPage } from './pages/public/register';
+import { LoginPage } from './pages/public/login';
+import {LogoutPage} from './pages/public/Logout'
+
+
+import { UserContextWrapper } from './context/user/UserContextWrapper';
+
+
+import { AdminDasboardPage } from './pages/admin/Dashboard';
+
+
+export function App() {
+
+return (
+<UserContextWrapper>
+
+
+    <BrowserRouter>
+      <Routes>
+
+
+<Route element={<PublicTemplate />}>
+<Route path='/' element={<HomePage />} />
+<Route path='/register' element={<RegisterPage />} />
+<Route path='/login' element={<LoginPage />} />
+<Route path='/logout' element={<LogoutPage />} />
+
+
+</Route>
+
+<Route element={<AdminTemplate />}>
+  <Route path='/admin' element={<AdminDasboardPage />} />
+  
+</Route>
+
+
+
+<Route element={<PublicTemplate />}>
+<Route path='*' index element={<Page404 />} />
+</Route>
+
+</Routes>
+</BrowserRouter>
+
+
+</UserContextWrapper>
+)
 }
-
-export default App
