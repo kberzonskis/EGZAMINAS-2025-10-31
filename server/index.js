@@ -14,6 +14,11 @@ import { postPublicRegister } from './src/api/public/postRegister.js';
 import { postPublicLogin } from './src/api/public/postLogin.js';
 import { getLogin } from './src/api/public/getLogin.js';
 
+import { FILE_SIZE_LIMIT } from './src/env.js';
+import { uploadStoryThumbnailImage } from './src/middleware/uploadStoryThumbnail.js';
+import { postImageUpload } from './src/api/admin/helpdesk//postImageUpload.js';
+import { formatFileSize } from './src/lib/formatFileSize.js';
+import {postAdminHelpdesks} from "./src/api/admin/helpdesk/postHelpdesks.js"
 
 const app = express();
 
@@ -41,9 +46,21 @@ app.post('/api/login', isPublic, postPublicLogin);
 app.get('/api/login', isAdmin, getLogin);
 app.get('/api/admin/logout', getLogout)
 
+app.post('/api/admin/helpdesks',isAdmin, postAdminHelpdesks);
 
+app.post('/api/admin/upload-image', isAdmin, uploadStoryThumbnailImage.single('img'), postImageUpload);
+app.use((err, req, res, next) => {
+    if (err.code === 'LIMIT_FILE_SIZE') {
+        return res.status(400).json({
+            status: 'error',
+            msg: `Virsytas failo limitas (${formatFileSize(FILE_SIZE_LIMIT)})`,
+        });
+    }
 
+    console.log(err);
 
+    return res.status(500).send('Server error');
+});
 
 
 

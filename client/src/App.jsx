@@ -21,6 +21,7 @@ import {NewHelpdeskPage} from "./pages/admin/NewHelpdeskPage"
 
 import { UserContextWrapper } from './context/user/UserContextWrapper';
 import { AdminDasboardPage } from './pages/admin/Dashboard';
+import { NewHelpdeskForm } from './components/NewHelpdeskForm';
 
 
 export function App() {
@@ -43,7 +44,7 @@ return (
 
 <Route element={<AdminTemplate />}>
   <Route path='/admin' element={<AdminDasboardPage />} />
-  <Route path='/admin/helpdesk/new' element={<NewHelpdeskPage />} />
+  <Route path='/admin/helpdesk/new' element={<NewHelpdeskForm />} />
   
 </Route>
 

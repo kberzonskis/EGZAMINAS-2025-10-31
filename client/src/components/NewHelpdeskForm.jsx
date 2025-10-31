@@ -18,8 +18,6 @@ export function NewHelpdeskForm({ api, method, helpdesk })
     const navigate = useNavigate();
     
 
-
-
     function handleImageFormSubmit(e) {
         e.preventDefault();
 
@@ -30,7 +28,7 @@ export function NewHelpdeskForm({ api, method, helpdesk })
         formData.append('img', imageDOM.files[0]);
 
         fetch(SERVER_ADDRESS + '/api/admin/upload-image', {
-            method: 'POST',
+            method: method,
             credentials: 'include',
             body: formData,
         })
@@ -80,7 +78,7 @@ export function NewHelpdeskForm({ api, method, helpdesk })
                <form onChange={handleImageFormSubmit} className="col-12 col-md-9 col-lg-6 mt-5 contain">
                 <img id="img_preview" className="d-block w-100 object-fit-cover"
                     style={{ height: '20rem', backgroundColor: '#eee',  }}
-                    src={img ? (SERVER_ADDRESS + img) : defaultImg} alt="Story thumbnail" />
+                    src={img ? (SERVER_ADDRESS + img) : defaultImg} alt="helpdesk thumbnail" />
                  <p id="img_path">{img}</p>
                 <input type="file" className={"form-control" + (imgErr ? ' is-invalid' : '')} id="img" name="img" />
                 <div className="invalid-feedback">{imgErr}</div>
