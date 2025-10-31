@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 
 app.post('/api/register', isPublic, postPublicRegister);
 app.post('/api/login', isPublic, postPublicLogin);
-app.get('/api/stories', getPublicStories);
+
 app.get('/api/login', isAdmin, getLogin);
 app.get('/api/admin/logout', getLogout)
 

@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router';
+import { Link } from 'react-router-dom';
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
@@ -24,11 +26,10 @@ import { AdminDasboardPage } from './pages/admin/Dashboard';
 export function App() {
 
 return (
+ 
 <UserContextWrapper>
-
-
-    <BrowserRouter>
-      <Routes>
+<BrowserRouter>
+<Routes>
 
 
 <Route element={<PublicTemplate />}>
@@ -52,9 +53,10 @@ return (
 </Route>
 
 </Routes>
+
+
 </BrowserRouter>
-
-
 </UserContextWrapper>
 )
 }
+
