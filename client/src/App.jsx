@@ -17,7 +17,6 @@ import { LoginPage } from './pages/public/login';
 import {LogoutPage} from './pages/public/Logout'
 
 
-import {NewHelpdeskPage} from "./pages/admin/NewHelpdeskPage"
 
 import { UserContextWrapper } from './context/user/UserContextWrapper';
 import { AdminDasboardPage } from './pages/admin/Dashboard';
@@ -44,7 +43,10 @@ return (
 
 <Route element={<AdminTemplate />}>
   <Route path='/admin' element={<AdminDasboardPage />} />
+
   <Route path='/admin/helpdesk/new' element={<NewHelpdeskForm />} />
+ 
+
   
 </Route>
 
